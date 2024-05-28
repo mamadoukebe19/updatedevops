@@ -1,1 +1,34 @@
+add kms policy 
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "kms:*",
+            "Resource": "*"
+        }
+    ]
+}
 
+-----------------------------------------
+aws eks update-kubeconfig --region us-east-1 --name my-cluster-test 
+
+
+-------------
+bash: kubectl: command not found : il faut installer avec la commande :
+sudo yum update
+sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+sudo chmod +x kubectl
+sudo mv kubectl /usr/local/bin/
+ verifie si correct : kubectl version --client 
+
+
+------------probleme--------------------------------------
+kubectl get pods --all-namespaces :
+E0528 01:29:26.585543   13479 memcache.go:265] couldn't get current server API group list: the server has asked for the client to provide credentials
+E0528 01:29:27.656636   13479 memcache.go:265] couldn't get current server API group list: the server has asked for the client to provide credentials
+E0528 01:29:28.677157   13479 memcache.go:265] couldn't get current server API group list: the server has asked for the client to provide credentials
+E0528 01:29:30.073299   13479 memcache.go:265] couldn't get current server API group list: the server has asked for the client to provide credentials
+E0528 01:29:31.157481   13479 memcache.go:265] couldn't get current server API group list: the server has asked for the client to provide credentials
+error: You must be logged in to the server (the server has asked for the client to provide credentials)
